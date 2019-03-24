@@ -13,13 +13,25 @@ namespace CSharpInVsCode
             Console.WriteLine(oneClass.Namespace);
             foreach(var info in oneClass.GetProperties())
             {
-                Console.WriteLine(info.Name);
+                Console.WriteLine(info);
+            } 
+            foreach(var info in oneClass.GetConstructors())
+            {
+                Console.WriteLine(info);
+            } 
+            foreach(var info in oneClass.GetFields())
+            {
+                Console.WriteLine(info);
+            } 
+            foreach(var info in oneClass.GetInterfaces())
+            {
+                Console.WriteLine(info);
             } 
         }
     }
 
     [ContextStatic]
-    public class ReflectionDemoTestClass
+    public class ReflectionDemoTestClass : IDemo
     {
         public void Test()
         {
@@ -29,6 +41,16 @@ namespace CSharpInVsCode
         public int Index {get; set;}
 
         public readonly int count;
+
+        public ReflectionDemoTestClass()
+        {
+
+        }
+
+        public ReflectionDemoTestClass(int index)
+        {
+            Index = index;
+        }
 
     }
 
