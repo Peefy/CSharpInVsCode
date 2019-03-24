@@ -1,6 +1,6 @@
 namespace CSharpInVsCode
 {
-    public class LinqDemo : IDemo
+    public class AttributeDemo : IDemo
     {
         public void Test()
         {

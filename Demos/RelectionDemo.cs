@@ -2,7 +2,7 @@ using System;
 
 namespace CSharpInVsCode
 {
-    public class ReflectionDemo
+    public class ReflectionDemo : IDemo
     {
         public void Test()
         {
