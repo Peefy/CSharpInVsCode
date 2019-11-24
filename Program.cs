@@ -9,6 +9,7 @@ namespace CSharpInVsCode
         {
             Console.WriteLine("Hello World!");
             new ReflectionDemo().Test();
+            Note.NoteClass.PrintNote();
         }
     }
 }
