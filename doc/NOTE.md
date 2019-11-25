@@ -145,24 +145,21 @@ class 关键字用于声明一个类。
 
 保留关键字|-|-|-|-|-|-
 -|-|-|-|-|-|-
-abstract|	as	base	bool	break	byte	case
-catch	char	checked	class	const	continue	decimal
-default	delegate	do	double	else	enum	event
-explicit	extern	false	finally	fixed	float	for
-foreach	goto	if	implicit	in	in (generic
-modifier)	int
-interface	internal	is	lock	long	namespace	new
-null	object	operator	out	out
-(generic
-modifier)	override	params
-private	protected	public	readonly	ref	return	sbyte
-sealed	short	sizeof	stackalloc	static	string	struct
-switch	this	throw	true	try	typeof	uint
-ulong	unchecked	unsafe	ushort	using	virtual	void
-volatile	while					
-上下文关键字
-add	alias	ascending	descending	dynamic	from	get
-global	group	into	join	let	orderby	partial
-(type)
-partial
-(method)	remove	select	set
+abstract|	as|	base|	bool|	break|	byte|	case
+catch|	char|	checked|	class|	const|	continue|	decimal
+default|	delegate|	do|	double|	else|	enum|	event
+explicit|	extern|	false|	finally|	fixed|	float|	for
+foreach|	goto|	if|	implicit|	in|	in (generic modifier)|	int
+interface|	internal|	is|	lock|	long|	namespace|	new
+null|	object|	operator|	out|	out (generic modifier)	override|	params
+private|	protected|	public|	readonly|	ref|	return|	sbyte
+sealed|	short|	sizeof|	stackalloc|	static|	string|	struct
+switch|	this|	throw|	true|	try|	typeof|	uint
+ulong|	unchecked|	unsafe|	ushort|	using|	virtual|	void
+volatile|	while|		
+			
+上下文关键字|-|-|-|-|-|-
+-|-|-|-|-|-|-
+add|	alias|	ascending|	descending|	dynamic|	from|	get
+global|	group|	into|	join|	let|	orderby|	partial
+(type) partial| (method)	remove|	select|	set
