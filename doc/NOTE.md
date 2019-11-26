@@ -3,7 +3,6 @@
 
 C# 是一个简单的、现代的、通用的、面向对象的编程语言，它是由微软（Microsoft）开发的。C# 是由 Anders Hejlsberg 和他的团队在 .Net 框架开发期间开发的。
 
-
 ## C#简介
 
 C# 是专为公共语言基础结构（CLI）设计的。CLI 由可执行代码和运行时环境组成，允许在不同的计算机平台和体系结构上使用各种高级语言。
@@ -118,7 +117,7 @@ class 关键字用于声明一个类。
 
 **成员变量**
 
-函数是一系列执行指定任务的语句。类的成员函数是在类内声明的。我们举例的类 Rectangle 包含了三个成员函数： AcceptDetails、GetArea 和 Display。
+函数是一系列执行指定任务的语句。类的成员函数是在类内声明的。举例的类 Rectangle 包含了三个成员函数： AcceptDetails、GetArea 和 Display。
 
 **成员函数**
 
@@ -137,7 +136,7 @@ class 关键字用于声明一个类。
 
 **C#关键字**
 
-关键字是 C# 编译器预定义的保留字。这些关键字不能用作标识符，但是，如果您想使用这些关键字作为标识符，可以在关键字前面加上 @ 字符作为前缀。
+关键字是 C# 编译器预定义的保留字。这些关键字不能用作标识符，但是，如果想使用这些关键字作为标识符，可以在关键字前面加上 @ 字符作为前缀。
 
 在 C# 中，有些关键字在代码的上下文中有特殊的意义，如 get 和 set，这些被称为上下文关键字（contextual keywords）。
 
@@ -176,7 +175,7 @@ global|	group|	into|	join|	let|	orderby|	partial
 
 值类型变量可以直接分配给一个值。它们是从类 `System.ValueType` 中派生的。
 
-值类型直接包含数据。比如 int、char、float，它们分别存储数字、字符、浮点数。当您声明一个 int 类型时，系统分配内存来存储值。
+值类型直接包含数据。比如 int、char、float，它们分别存储数字、字符、浮点数。当声明一个 int 类型时，系统分配内存来存储值。
 
 类型|	描述|	范围|	默认值
 -|-|-|-
@@ -226,13 +225,13 @@ namespace DataTypeApplication
 
 **动态（Dynamic）类型**
 
-您可以存储任何类型的值在动态数据类型变量中。这些变量的类型检查是在运行时发生的。
+可以存储任何类型的值在动态数据类型变量中。这些变量的类型检查是在运行时发生的。
 
 动态类型与对象类型相似，但是对象类型变量的类型检查是在编译时发生的，而动态类型变量的类型检查是在运行时发生的。
 
 **字符串（String）类型**
 
-`字符串（String）类型` 允许您给变量分配任何字符串值。字符串（String）类型是 System.String 类的别名。它是从对象（Object）类型派生的。字符串（String）类型的值可以通过两种形式进行分配：引号和 @引号。
+`字符串（String）类型` 允许给变量分配任何字符串值。字符串（String）类型是 System.String 类的别名。它是从对象（Object）类型派生的。字符串（String）类型的值可以通过两种形式进行分配：引号和 @引号。
 
 C# string 字符串的前面可以加 @（称作"逐字字符串"）将转义字符（\）当作普通字符对待，比如：
 
@@ -297,7 +296,7 @@ namespace TypeConversionApplication
 
 一个变量只不过是一个供程序操作的存储区的名字。在 C# 中，每个变量都有一个特定的类型，类型决定了变量的内存大小和布局。范围内的值可以存储在内存中，可以对变量进行一系列操作。
 
-我们已经讨论了各种数据类型。C# 中提供的基本的值类型大致可以分为以下几类：
+已经讨论了各种数据类型。C# 中提供的基本的值类型大致可以分为以下几类：
 
 类型|	举例
 -|-
@@ -856,9 +855,9 @@ namespace OperatorsAppl
 -|-
 if 语句|	一个 if 语句 由一个布尔表达式后跟一个或多个语句组成。
 if...else 语句|	一个 if 语句 后可跟一个可选的 else 语句，else 语句在布尔表达式为假时执行。
-嵌套 if 语句|	您可以在一个 if 或 else if 语句内使用另一个 if 或 else if 语句。
+嵌套 if 语句|	可以在一个 if 或 else if 语句内使用另一个 if 或 else if 语句。
 switch 语句|	一个 switch 语句允许测试一个变量等于多个值时的情况。
-嵌套 switch 语句|	您可以在一个 switch 语句内使用另一个 switch 语句。
+嵌套 switch 语句|	可以在一个 switch 语句内使用另一个 switch 语句。
 
 **? : 运算符**
 
@@ -893,7 +892,7 @@ namespace jiecheng
 
 编程语言提供了允许更为复杂的执行路径的多种控制结构。
 
-循环语句允许我们多次执行一个语句或语句组，下面是大多数编程语言中循环语句的一般形式：
+循环语句允许多次执行一个语句或语句组，下面是大多数编程语言中循环语句的一般形式：
 
 **循环类型**
 
@@ -902,7 +901,7 @@ namespace jiecheng
 `while 循环`|	当给定条件为真时，重复语句或语句组。它会在执行循环主体之前测试条件。
 `for/foreach 循环`|	多次执行一个语句序列，简化管理循环变量的代码。
 `do...while 循环`| 除了它是在循环主体结尾测试条件外，其他与 while 语句类似。
-`嵌套循环`|	您可以在 while、for 或 do..while 循环内使用一个或多个循环。
+`嵌套循环`|	可以在 while、for 或 do..while 循环内使用一个或多个循环。
 
 **循环控制语句**
 
@@ -1084,7 +1083,7 @@ namespace CalculatorApplication
 
 **参数传递**
 
-当调用带有参数的方法时，您需要向方法传递参数。在 C# 中，有三种向方法传递参数的方式：
+当调用带有参数的方法时，需要向方法传递参数。在 C# 中，有三种向方法传递参数的方式：
 
 方式|	描述
 -|-
@@ -1330,7 +1329,7 @@ namespace CalculatorApplication
 
 **声明数组**
 
-在 C# 中声明一个数组，您可以使用下面的语法：
+在 C# 中声明一个数组，可以使用下面的语法：
 
 ```csharp
 datatype[] arrayName;
@@ -1342,9 +1341,9 @@ datatype[] arrayName;
 
 **初始化数组**
 
-声明一个数组不会在内存中初始化数组。当初始化数组变量时，您可以赋值给数组。
+声明一个数组不会在内存中初始化数组。当初始化数组变量时，可以赋值给数组。
 
-数组是一个引用类型，所以您需要使用 new 关键字来创建数组的实例。
+数组是一个引用类型，所以需要使用 new 关键字来创建数组的实例。
 
 例如：
 
@@ -1397,3 +1396,896 @@ namespace ArrayApplication
    }
 }
 ```
+
+**使用 foreach 循环**
+
+使用一个 for 循环来访问每个数组元素。也可以使用一个 foreach 语句来遍历数组。
+
+```csharp
+using System;
+
+namespace ArrayApplication
+{
+   class MyArray
+   {
+      static void Main(string[] args)
+      {
+         int []  n = new int[10]; /* n 是一个带有 10 个整数的数组 */
+
+
+         /* 初始化数组 n 中的元素 */        
+         for ( int i = 0; i < 10; i++ )
+         {
+            n[i] = i + 100;
+         }
+
+         /* 输出每个数组元素的值 */
+         foreach (int j in n )
+         {
+            int i = j-100;
+            Console.WriteLine("Element[{0}] = {1}", i, j);
+         }
+         Console.ReadKey();
+      }
+   }
+}
+```
+
+**C# 数组细节**
+
+概念|	描述
+-|-
+多维数组|	C# 支持多维数组。多维数组最简单的形式是二维数组。
+交错数组|	C# 支持交错数组，即数组的数组。
+传递数组给函数|	可以通过指定不带索引的数组名称来给函数传递一个指向数组的指针。
+参数数组|	这通常用于传递未知数量的参数给函数。
+Array 类|	在 System 命名空间中定义，是所有数组的基类，并提供了各种用于数组的属性和方法。
+
+**C# 字符串（String）**
+
+可以使用字符数组来表示字符串，但是，更常见的做法是使用 string 关键字来声明一个字符串变量。string 关键字是 System.String 类的别名。
+
+**创建 String 对象**
+
+* 通过给 String 变量指定一个字符串
+* 通过使用 String 类构造函数
+* 通过使用字符串串联运算符（ + ）
+* 通过检索属性或调用一个返回字符串的方法
+* 通过格式化方法来转换一个值或对象为它的字符串表示形式
+
+```csharp
+using System;
+
+namespace StringApplication
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           //字符串，字符串连接
+            string fname, lname;
+            fname = "Rowan";
+            lname = "Atkinson";
+
+            string fullname = fname + lname;
+            Console.WriteLine("Full Name: {0}", fullname);
+
+            //通过使用 string 构造函数
+            char[] letters = { 'H', 'e', 'l', 'l','o' };
+            string greetings = new string(letters);
+            Console.WriteLine("Greetings: {0}", greetings);
+
+            //方法返回字符串
+            string[] sarray = { "Hello", "From", "Tutorials", "Point" };
+            string message = String.Join(" ", sarray);
+            Console.WriteLine("Message: {0}", message);
+
+            //用于转化值的格式化方法
+            DateTime waiting = new DateTime(2012, 10, 10, 17, 58, 1);
+            string chat = String.Format("Message sent at {0:t} on {0:D}",
+            waiting);
+            Console.WriteLine("Message: {0}", chat);
+            Console.ReadKey() ;
+        }
+    }
+}
+```
+
+**String类的属性**
+
+序号|	属性名称 & 描述
+1|	Chars 在当前 String 对象中获取 Char 对象的指定位置。
+2|	Length 在当前的 String 对象中获取字符数。
+
+**String类的方法**
+
+序号|	方法名称 & 描述
+-|-
+1|	public static int Compare( string strA, string strB ) 比较两个指定的 string 对象，并返回一个表示它们在排列顺序中相对位置的整数。该方法区分大小写。
+2|	public static int Compare( string strA, string strB, bool ignoreCase ) 比较两个指定的 string 对象，并返回一个表示它们在排列顺序中相对位置的整数。但是，如果布尔参数为真时，该方法不区分大小写。
+3|	public static string Concat( string str0, string str1 ) 连接两个 string 对象。
+4|	public static string Concat( string str0, string str1, string str2 ) 连接三个 string 对象。
+5|	public static string Concat( string str0, string str1, string str2, string str3 ) 连接四个 string 对象。
+6|	public bool Contains( string value ) 返回一个表示指定 string 对象是否出现在字符串中的值。
+7|	public static string Copy( string str ) 创建一个与指定字符串具有相同值的新的 String 对象。
+8|	public void CopyTo( int sourceIndex, char[] destination, int destinationIndex, int count ) 从 string 对象的指定位置开始复制指定数量的字符到 Unicode 字符数组中的指定位置。
+9|	public bool EndsWith( string value ) 判断 string 对象的结尾是否匹配指定的字符串。
+10|	public bool Equals( string value ) 判断当前的 string 对象是否与指定的 string 对象具有相同的值。
+11|	public static bool Equals( string a, string b ) 判断两个指定的 string 对象是否具有相同的值。
+12|	public static string Format( string format, Object arg0 ) 把指定字符串中一个或多个格式项替换为指定对象的字符串表示形式。
+13|	public int IndexOf( char value ) 返回指定 Unicode 字符在当前字符串中第一次出现的索引，索引从 0 开始。
+14|	public int IndexOf( string value ) 返回指定字符串在该实例中第一次出现的索引，索引从 0 开始。
+15|	public int IndexOf( char value, int startIndex ) 返回指定 Unicode 字符从该字符串中指定字符位置开始搜索第一次出现的索引，索引从 0 开始。
+16|	public int IndexOf( string value, int startIndex ) 返回指定字符串从该实例中指定字符位置开始搜索第一次出现的索引，索引从 0 开始。
+17|	public int IndexOfAny( char[] anyOf ) 返回某一个指定的 Unicode 字符数组中任意字符在该实例中第一次出现的索引，索引从 0 开始。
+18|	public int IndexOfAny( char[] anyOf, int startIndex ) 返回某一个指定的 Unicode 字符数组中任意字符从该实例中指定字符位置开始搜索第一次出现的索引，索引从 0 开始。
+19|	public string Insert( int startIndex, string value ) 返回一个新的字符串，其中，指定的字符串被插入在当前 string 对象的指定索引位置。
+20|	public static bool IsNullOrEmpty( string value ) 指示指定的字符串是否为 null 或者是否为一个空的字符串。
+21|	public static string Join( string separator, string[] value ) 连接一个字符串数组中的所有元素，使用指定的分隔符分隔每个元素。
+22|	public static string Join( string separator, string[] value, int startIndex, int count ) 连接接一个字符串数组中的指定位置开始的指定元素，使用指定的分隔符分隔每个元素。
+23|	public int LastIndexOf( char value ) 返回指定 Unicode 字符在当前 string 对象中最后一次出现的索引位置，索引从 0 开始。
+24|	public int LastIndexOf( string value ) 返回指定字符串在当前 string 对象中最后一次出现的索引位置，索引从 0 开始。
+25|	public string Remove( int startIndex ) 移除当前实例中的所有字符，从指定位置开始，一直到最后一个位置为止，并返回字符串。
+26|	public string Remove( int startIndex, int count ) 从当前字符串的指定位置开始移除指定数量的字符，并返回字符串。
+27|	public string Replace( char oldChar, char newChar ) 把当前 string 对象中，所有指定的 Unicode 字符替换为另一个指定的 Unicode 字符，并返回新的字符串。
+28|	public string Replace( string oldValue, string newValue ) 把当前 string 对象中，所有指定的字符串替换为另一个指定的字符串，并返回新的字符串。
+29|	public string[] Split( params char[] separator ) 返回一个字符串数组，包含当前的 string 对象中的子字符串，子字符串是使用指定的 Unicode 字符数组中的元素进行分隔的。
+30|	public string[] Split( char[] separator, int count ) 返回一个字符串数组，包含当前的 string 对象中的子字符串，子字符串是使用指定的 Unicode 字符数组中的元素进行分隔的。int 参数指定要返回的子字符串的最大数目。
+31|	public bool StartsWith( string value ) 判断字符串实例的开头是否匹配指定的字符串。
+32|	public char[] ToCharArray() 返回一个带有当前 string 对象中所有字符的 Unicode 字符数组。
+33|	public char[] ToCharArray( int startIndex, int length ) 返回一个带有当前 string 对象中所有字符的 Unicode 字符数组，从指定的索引开始，直到指定的长度为止。
+34|	public string ToLower() 把字符串转换为小写并返回。
+35|	public string ToUpper() 把字符串转换为大写并返回。
+36|	public string Trim() 移除当前 String 对象中的所有前导空白字符和后置空白字符。
+
+```csharp
+using System;
+
+namespace StringApplication
+{
+   class StringProg
+   {
+      static void Main(string[] args)
+      {
+         string str1 = "This is test";
+         string str2 = "This is text";
+
+         if (String.Compare(str1, str2) == 0)
+         {
+            Console.WriteLine(str1 + " and " + str2 +  " are equal.");
+         }
+         else
+         {
+            Console.WriteLine(str1 + " and " + str2 + " are not equal.");
+         }
+         Console.ReadKey() ;
+      }
+   }
+}
+```
+
+**C# string.Format格式化日期**
+
+```csharp
+DateTime dt = new DateTime(2017,4,1,13,16,32,108);
+string.Format("{0:y yy yyy yyyy}",dt); //17 17 2017 2017
+string.Format("{0:M MM MMM MMMM}", dt);//4  04 四月 四月
+string.Format("{0:d dd ddd dddd}", dt);//1  01 周六 星期六
+string.Format("{0:t tt}", dt);//下 下午
+string.Format("{0:H HH}", dt);//13 13
+string.Format("{0:h hh}", dt);//1  01
+string.Format("{0:m mm}", dt);//16 16
+string.Format("{0:s ss}", dt);//32 32
+string.Format("{0:F FF FFF FFFF FFFFF FFFFFF FFFFFFF}", dt);//1 1  108 108  108   108    108
+string.Format("{0:f ff fff ffff fffff ffffff fffffff}", dt);//1 10 108 1080 10800 108000 1080000
+string.Format("{0:z zz zzz}", dt);//+8 +08 +08:00
+
+string.Format("{0:yyyy/MM/dd HH:mm:ss.fff}",dt);　　//2017/04/01 13:16:32.108
+string.Format("{0:yyyy/MM/dd dddd}", dt);　　　　　　//2017/04/01 星期六
+string.Format("{0:yyyy/MM/dd dddd tt hh:mm}", dt); //2017/04/01 星期六 下午 01:16
+string.Format("{0:yyyyMMdd}", dt);　　　　　　　　　//20170401
+string.Format("{0:yyyy-MM-dd HH:mm:ss.fff}", dt);　//2017-04-01 13:16:32.108
+```
+
+**C# 结构体（Struct）**
+
+在 C# 中，结构体是值类型数据结构。它使得一个单一变量可以存储各种数据类型的相关数据。struct 关键字用于创建结构体。
+
+**定义结构体**
+
+为了定义一个结构体，必须使用 struct 语句。struct 语句为程序定义了一个带有多个成员的新的数据类型。
+
+```csharp
+struct Books
+{
+   public string title;
+   public string author;
+   public string subject;
+   public int book_id;
+};  
+
+using System;
+using System.Text;
+     
+struct Books
+{
+   public string title;
+   public string author;
+   public string subject;
+   public int book_id;
+};  
+
+public class testStructure
+{
+   public static void Main(string[] args)
+   {
+
+      Books Book1;        /* 声明 Book1，类型为 Book */
+      Books Book2;        /* 声明 Book2，类型为 Book */
+
+      /* book 1 详述 */
+      Book1.title = "C Programming";
+      Book1.author = "Nuha Ali";
+      Book1.subject = "C Programming Tutorial";
+      Book1.book_id = 6495407;
+
+      /* book 2 详述 */
+      Book2.title = "Telecom Billing";
+      Book2.author = "Zara Ali";
+      Book2.subject =  "Telecom Billing Tutorial";
+      Book2.book_id = 6495700;
+
+      /* 打印 Book1 信息 */
+      Console.WriteLine( "Book 1 title : {0}", Book1.title);
+      Console.WriteLine("Book 1 author : {0}", Book1.author);
+      Console.WriteLine("Book 1 subject : {0}", Book1.subject);
+      Console.WriteLine("Book 1 book_id :{0}", Book1.book_id);
+
+      /* 打印 Book2 信息 */
+      Console.WriteLine("Book 2 title : {0}", Book2.title);
+      Console.WriteLine("Book 2 author : {0}", Book2.author);
+      Console.WriteLine("Book 2 subject : {0}", Book2.subject);
+      Console.WriteLine("Book 2 book_id : {0}", Book2.book_id);      
+
+      Console.ReadKey();
+
+   }
+}
+```
+
+**C# 结构的特点**
+
+C# 中的结构与传统的 C 或 C++ 中的结构不同。C# 中的结构有以下特点：
+
+* 结构可带有方法、字段、索引、属性、运算符方法和事件。
+* 结构可定义构造函数，但不能定义析构函数。但是，不能为结构定义无参构造函数。无参构造函数(默认)是自动定义的，且不能被改变。
+* 与类不同，结构不能继承其他的结构或类。
+* 结构不能作为其他结构或类的基础结构。
+* 结构可实现一个或多个接口。
+* 结构成员不能指定为 abstract、virtual 或 protected。
+* 当使用 New 操作符创建一个结构对象时，会调用适当的构造函数来创建结构。与类不同，结构可以不使用 New 操作符即可被实例化。
+* 如果不使用 New 操作符，只有在所有的字段都被初始化之后，字段才被赋值，对象才被使用。
+
+**C#类和结构的区别**
+
+* 类是引用类型，结构是值类型。
+* 结构不支持继承。
+* 结构不能声明默认的构造函数。
+
+```csharp
+using System;
+using System.Text;
+     
+struct Books
+{
+   private string title;
+   private string author;
+   private string subject;
+   private int book_id;
+   public void getValues(string t, string a, string s, int id)
+   {
+      title = t;
+      author = a;
+      subject = s;
+      book_id =id;
+   }
+   public void display()
+   {
+      Console.WriteLine("Title : {0}", title);
+      Console.WriteLine("Author : {0}", author);
+      Console.WriteLine("Subject : {0}", subject);
+      Console.WriteLine("Book_id :{0}", book_id);
+   }
+
+};  
+
+public class testStructure
+{
+   public static void Main(string[] args)
+   {
+
+      Books Book1 = new Books(); /* 声明 Book1，类型为 Book */
+      Books Book2 = new Books(); /* 声明 Book2，类型为 Book */
+
+      /* book 1 详述 */
+      Book1.getValues("C Programming",
+      "Nuha Ali", "C Programming Tutorial",6495407);
+
+      /* book 2 详述 */
+      Book2.getValues("Telecom Billing",
+      "Zara Ali", "Telecom Billing Tutorial", 6495700);
+
+      /* 打印 Book1 信息 */
+      Book1.display();
+
+      /* 打印 Book2 信息 */
+      Book2.display();
+
+      Console.ReadKey();
+
+   }
+}
+```
+
+**C# 枚举（Enum）**
+
+枚举是一组命名整型常量。枚举类型是使用 enum 关键字声明的。
+
+C# 枚举是值类型。换句话说，枚举包含自己的值，且不能继承或传递继承。
+
+```csharp
+using System;
+
+public class EnumTest
+{
+    enum Day { Sun, Mon, Tue, Wed, Thu, Fri, Sat };
+
+    static void Main()
+    {
+        int x = (int)Day.Sun;
+        int y = (int)Day.Fri;
+        Console.WriteLine("Sun = {0}", x);
+        Console.WriteLine("Fri = {0}", y);
+    }
+}
+```
+
+**C# 类（Class）**
+
+当定义一个类时，定义了一个数据类型的蓝图。这实际上并没有定义任何的数据，但它定义了类的名称意味着什么，也就是说，类的对象由什么组成及在这个对象上可执行什么操作。对象是类的实例。构成类的方法和变量成为类的成员。
+
+**类的定义**
+
+类的定义是以关键字 `class` 开始，后跟类的名称。类的主体，包含在一对花括号内。下面是类定义的一般形式：
+
+```csharp
+<access specifier> class  class_name
+{
+    // member variables
+    <access specifier> <data type> variable1;
+    <access specifier> <data type> variable2;
+    ...
+    <access specifier> <data type> variableN;
+    // member methods
+    <access specifier> <return type> method1(parameter_list)
+    {
+        // method body
+    }
+    <access specifier> <return type> method2(parameter_list)
+    {
+        // method body
+    }
+    ...
+    <access specifier> <return type> methodN(parameter_list)
+    {
+        // method body
+    }
+}
+```
+
+*注意：*
+
+* 访问标识符 `<access specifier>` 指定了对类及其成员的访问规则。如果没有指定，则使用默认的访问标识符。类的默认访问标识符是 internal，成员的默认访问标识符是 private。
+* 数据类型 `<data type>` 指定了变量的类型，返回类型 `<return type>` 指定了返回的方法返回的数据类型。
+* 如果要访问类的成员，要使用点（`.`）运算符。
+* 点运算符链接了对象的名称和成员的名称。
+
+```csharp
+using System;
+namespace BoxApplication
+{
+    class Box
+    {
+       public double length;   // 长度
+       public double breadth;  // 宽度
+       public double height;   // 高度
+    }
+    class Boxtester
+    {
+        static void Main(string[] args)
+        {
+            Box Box1 = new Box();        // 声明 Box1，类型为 Box
+            Box Box2 = new Box();        // 声明 Box2，类型为 Box
+            double volume = 0.0;         // 体积
+
+            // Box1 详述
+            Box1.height = 5.0;
+            Box1.length = 6.0;
+            Box1.breadth = 7.0;
+
+            // Box2 详述
+            Box2.height = 10.0;
+            Box2.length = 12.0;
+            Box2.breadth = 13.0;
+           
+            // Box1 的体积
+            volume = Box1.height * Box1.length * Box1.breadth;
+            Console.WriteLine("Box1 的体积： {0}",  volume);
+
+            // Box2 的体积
+            volume = Box2.height * Box2.length * Box2.breadth;
+            Console.WriteLine("Box2 的体积： {0}", volume);
+            Console.ReadKey();
+        }
+    }
+}
+```
+
+**成员函数和封装**
+
+类的成员函数是一个在类定义中有它的定义或原型的函数，就像其他变量一样。作为类的一个成员，它能在类的任何对象上操作，且能访问该对象的类的所有成员。
+
+成员变量是对象的属性（从设计角度），且它们保持私有来实现封装。这些变量只能使用公共成员函数来访问。
+
+让使用上面的概念来设置和获取一个类中不同的类成员的值：
+
+```csharp
+using System;
+namespace BoxApplication
+{
+    class Box
+    {
+       private double length;   // 长度
+       private double breadth;  // 宽度
+       private double height;   // 高度
+       public void setLength( double len )
+       {
+            length = len;
+       }
+
+       public void setBreadth( double bre )
+       {
+            breadth = bre;
+       }
+
+       public void setHeight( double hei )
+       {
+            height = hei;
+       }
+       public double getVolume()
+       {
+           return length * breadth * height;
+       }
+    }
+    class Boxtester
+    {
+        static void Main(string[] args)
+        {
+            Box Box1 = new Box();        // 声明 Box1，类型为 Box
+            Box Box2 = new Box();                // 声明 Box2，类型为 Box
+            double volume;                               // 体积
+
+
+            // Box1 详述
+            Box1.setLength(6.0);
+            Box1.setBreadth(7.0);
+            Box1.setHeight(5.0);
+
+            // Box2 详述
+            Box2.setLength(12.0);
+            Box2.setBreadth(13.0);
+            Box2.setHeight(10.0);
+       
+            // Box1 的体积
+            volume = Box1.getVolume();
+            Console.WriteLine("Box1 的体积： {0}" ,volume);
+
+            // Box2 的体积
+            volume = Box2.getVolume();
+            Console.WriteLine("Box2 的体积： {0}", volume);
+           
+            Console.ReadKey();
+        }
+    }
+}
+```
+
+**C# 中的构造函数**
+
+类的 构造函数 是类的一个特殊的成员函数，当创建类的新对象时执行。
+
+构造函数的名称与类的名称完全相同，它没有任何返回类型。
+
+下面的实例说明了构造函数的概念：
+
+```csharp
+using System;
+namespace LineApplication
+{
+   class Line
+   {
+      private double length;   // 线条的长度
+      public Line()
+      {
+         Console.WriteLine("对象已创建");
+      }
+
+      public void setLength( double len )
+      {
+         length = len;
+      }
+      public double getLength()
+      {
+         return length;
+      }
+
+      static void Main(string[] args)
+      {
+         Line line = new Line();    
+         // 设置线条长度
+         line.setLength(6.0);
+         Console.WriteLine("线条的长度： {0}", line.getLength());
+         Console.ReadKey();
+      }
+   }
+}
+```
+
+`默认的构造函数`没有任何参数。但是如果需要一个带有参数的构造函数可以有参数，这种构造函数叫做`参数化构造函数`。这种技术可以帮助在创建对象的同时给对象赋初始值，具体请看下面实例：
+
+```csharp
+using System;
+namespace LineApplication
+{
+   class Line
+   {
+      private double length;   // 线条的长度
+      public Line(double len)  // 参数化构造函数
+      {
+         Console.WriteLine("对象已创建，length = {0}", len);
+         length = len;
+      }
+
+      public void setLength( double len )
+      {
+         length = len;
+      }
+      public double getLength()
+      {
+         return length;
+      }
+
+      static void Main(string[] args)
+      {
+         Line line = new Line(10.0);
+         Console.WriteLine("线条的长度： {0}", line.getLength());
+         // 设置线条长度
+         line.setLength(6.0);
+         Console.WriteLine("线条的长度： {0}", line.getLength());
+         Console.ReadKey();
+      }
+   }
+}
+```
+
+**C# 中的析构函数**
+
+类的 析构函数 是类的一个特殊的成员函数，当类的对象超出范围时执行。
+
+析构函数的名称是在类的名称前加上一个波浪形（~）作为前缀，它不返回值，也不带任何参数。
+
+析构函数用于在结束程序（比如关闭文件、释放内存等）之前释放资源。析构函数不能继承或重载。
+
+下面的实例说明了析构函数的概念：
+
+```csharp
+using System;
+namespace LineApplication
+{
+   class Line
+   {
+      private double length;   // 线条的长度
+      public Line()  // 构造函数
+      {
+         Console.WriteLine("对象已创建");
+      }
+      ~Line() //析构函数
+      {
+         Console.WriteLine("对象已删除");
+      }
+
+      public void setLength( double len )
+      {
+         length = len;
+      }
+      public double getLength()
+      {
+         return length;
+      }
+
+      static void Main(string[] args)
+      {
+         Line line = new Line();
+         // 设置线条长度
+         line.setLength(6.0);
+         Console.WriteLine("线条的长度： {0}", line.getLength());          
+      }
+   }
+}
+```
+
+**C# 类的静态成员**
+
+可以使用 static 关键字把类成员定义为静态的。当声明一个类成员为静态时，意味着无论有多少个类的对象被创建，只会有一个该静态成员的副本。
+
+关键字 static 意味着类中只有一个该成员的实例。静态变量用于定义常量，因为它们的值可以通过直接调用类而不需要创建类的实例来获取。静态变量可在成员函数或类的定义外部进行初始化。也可以在类的定义内部初始化静态变量。
+
+下面的实例演示了静态变量的用法：
+
+```csharp
+using System;
+namespace StaticVarApplication
+{
+    class StaticVar
+    {
+       public static int num;
+        public void count()
+        {
+            num++;
+        }
+        public int getNum()
+        {
+            return num;
+        }
+    }
+    class StaticTester
+    {
+        static void Main(string[] args)
+        {
+            StaticVar s1 = new StaticVar();
+            StaticVar s2 = new StaticVar();
+            s1.count();
+            s1.count();
+            s1.count();
+            s2.count();
+            s2.count();
+            s2.count();        
+            Console.WriteLine("s1 的变量 num： {0}", s1.getNum());
+            Console.WriteLine("s2 的变量 num： {0}", s2.getNum());
+            Console.ReadKey();
+        }
+    }
+}
+```
+
+也可以把一个`成员函数`声明为 `static`。这样的函数只能访问静态变量。静态函数在对象被创建之前就已经存在。下面的实例演示了`静态函数`的用法：
+
+```cs
+using System;
+namespace StaticVarApplication
+{
+    class StaticVar
+    {
+       public static int num;
+        public void count()
+        {
+            num++;
+        }
+        public static int getNum()
+        {
+            return num;
+        }
+    }
+    class StaticTester
+    {
+        static void Main(string[] args)
+        {
+            StaticVar s = new StaticVar();
+            s.count();
+            s.count();
+            s.count();                  
+            Console.WriteLine("变量 num： {0}", StaticVar.getNum());
+            Console.ReadKey();
+        }
+    }
+}
+```
+
+**C# 继承**
+
+继承是面向对象程序设计中最重要的概念之一。继承允许我们根据一个类来定义另一个类，这使得创建和维护应用程序变得更容易。同时也有利于重用代码和节省开发时间。
+
+当创建一个类时，程序员不需要完全重新编写新的数据成员和成员函数，只需要设计一个新的类，继承了已有的类的成员即可。这个已有的类被称为的基类，这个新的类被称为派生类。
+
+继承的思想实现了 属于（IS-A） 关系。例如，哺乳动物 属于（IS-A） 动物，狗 属于（IS-A） 哺乳动物，因此狗 属于（IS-A） 动物。
+
+**基类和派生类**
+
+一个类可以派生自多个类或接口，这意味着它可以从多个基类或接口继承数据和函数。
+
+C# 中创建派生类的语法如下：
+
+```cs
+<访问修饰符符> class <基类>
+{
+ ...
+}
+class <派生类> : <基类>
+{
+ ...
+}
+```
+
+```cs
+using System;
+namespace InheritanceApplication
+{
+   class Shape
+   {
+      public void setWidth(int w)
+      {
+         width = w;
+      }
+      public void setHeight(int h)
+      {
+         height = h;
+      }
+      protected int width;
+      protected int height;
+   }
+
+   // 派生类
+   class Rectangle: Shape
+   {
+      public int getArea()
+      {
+         return (width * height);
+      }
+   }
+   
+   class RectangleTester
+   {
+      static void Main(string[] args)
+      {
+         Rectangle Rect = new Rectangle();
+
+         Rect.setWidth(5);
+         Rect.setHeight(7);
+
+         // 打印对象的面积
+         Console.WriteLine("总面积： {0}",  Rect.getArea());
+         Console.ReadKey();
+      }
+   }
+}
+```
+
+**基类的初始化**
+
+派生类继承了基类的成员变量和成员方法。因此父类对象应在子类对象创建之前被创建。您可以在成员初始化列表中进行父类的初始化。
+
+```cs
+using System;
+namespace RectangleApplication
+{
+   class Rectangle
+   {
+      // 成员变量
+      protected double length;
+      protected double width;
+      public Rectangle(double l, double w)
+      {
+         length = l;
+         width = w;
+      }
+      public double GetArea()
+      {
+         return length * width;
+      }
+      public void Display()
+      {
+         Console.WriteLine("长度： {0}", length);
+         Console.WriteLine("宽度： {0}", width);
+         Console.WriteLine("面积： {0}", GetArea());
+      }
+   }//end class Rectangle  
+   class Tabletop : Rectangle
+   {
+      private double cost;
+      public Tabletop(double l, double w) : base(l, w)
+      { }
+      public double GetCost()
+      {
+         double cost;
+         cost = GetArea() * 70;
+         return cost;
+      }
+      public void Display()
+      {
+         base.Display();
+         Console.WriteLine("成本： {0}", GetCost());
+      }
+   }
+   class ExecuteRectangle
+   {
+      static void Main(string[] args)
+      {
+         Tabletop t = new Tabletop(4.5, 7.5);
+         t.Display();
+         Console.ReadLine();
+      }
+   }
+}
+```
+
+**C# 多重继承**
+
+多重继承指的是一个类别可以同时从多于一个父类继承行为与特征的功能。与单一继承相对，单一继承指一个类别只可以继承自一个父类。
+
+C# 不支持多重继承。但是，您可以使用接口来实现多重继承。下面的程序演示了这点：
+
+```cs
+using System;
+namespace InheritanceApplication
+{
+   class Shape
+   {
+      public void setWidth(int w)
+      {
+         width = w;
+      }
+      public void setHeight(int h)
+      {
+         height = h;
+      }
+      protected int width;
+      protected int height;
+   }
+
+   // 基类 PaintCost
+   public interface PaintCost
+   {
+      int getCost(int area);
+
+   }
+   // 派生类
+   class Rectangle : Shape, PaintCost
+   {
+      public int getArea()
+      {
+         return (width * height);
+      }
+      public int getCost(int area)
+      {
+         return area * 70;
+      }
+   }
+   class RectangleTester
+   {
+      static void Main(string[] args)
+      {
+         Rectangle Rect = new Rectangle();
+         int area;
+         Rect.setWidth(5);
+         Rect.setHeight(7);
+         area = Rect.getArea();
+         // 打印对象的面积
+         Console.WriteLine("总面积： {0}",  Rect.getArea());
+         Console.WriteLine("油漆总成本： ${0}" , Rect.getCost(area));
+         Console.ReadKey();
+      }
+   }
+}
+```
+
+

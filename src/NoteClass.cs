@@ -33,6 +33,16 @@ namespace CSharpInVsCode.Note
         }
     }
 
+    internal struct Books
+    {
+        public string Title;
+        public string Author;
+        public string Subject;
+        public int BookId;
+    };
+
+    enum Day { Sun, Mon, Tue, Wed, Thu, Fri, Sat };
+
     public class NoteClass
     {
         private NoteClass()
@@ -233,6 +243,29 @@ namespace CSharpInVsCode.Note
             {
                 Console.WriteLine("Element[{0}] = {1}", i, n[i]);
             }
+
+            foreach (int j in n)
+            {
+                int k = j - 100;
+                Console.WriteLine("Element[{0}] = {1}", j, k);
+            }
+
+            string str1 = "This is test";
+            string str2 = "This is text";
+
+            if (String.Compare(str1, str2) == 0)
+            {
+                Console.WriteLine(str1 + " and " + str2 + " are equal.");
+            }
+            else
+            {
+                Console.WriteLine(str1 + " and " + str2 + " are not equal.");
+            }
+
+            int xSun = (int)Day.Sun;
+            int xFri = (int)Day.Fri;
+            Console.WriteLine("Sun = {0}", xSun);
+            Console.WriteLine("Fri = {0}", xFri);
 
             Console.WriteLine();
             Console.WriteLine();
