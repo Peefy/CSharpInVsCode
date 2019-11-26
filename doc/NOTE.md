@@ -2103,7 +2103,7 @@ namespace StaticVarApplication
 
 **C# 继承**
 
-继承是面向对象程序设计中最重要的概念之一。继承允许我们根据一个类来定义另一个类，这使得创建和维护应用程序变得更容易。同时也有利于重用代码和节省开发时间。
+继承是面向对象程序设计中最重要的概念之一。继承允许根据一个类来定义另一个类，这使得创建和维护应用程序变得更容易。同时也有利于重用代码和节省开发时间。
 
 当创建一个类时，程序员不需要完全重新编写新的数据成员和成员函数，只需要设计一个新的类，继承了已有的类的成员即可。这个已有的类被称为的基类，这个新的类被称为派生类。
 
@@ -2172,7 +2172,7 @@ namespace InheritanceApplication
 
 **基类的初始化**
 
-派生类继承了基类的成员变量和成员方法。因此父类对象应在子类对象创建之前被创建。您可以在成员初始化列表中进行父类的初始化。
+派生类继承了基类的成员变量和成员方法。因此父类对象应在子类对象创建之前被创建。可以在成员初始化列表中进行父类的初始化。
 
 ```cs
 using System;
@@ -2232,7 +2232,7 @@ namespace RectangleApplication
 
 多重继承指的是一个类别可以同时从多于一个父类继承行为与特征的功能。与单一继承相对，单一继承指一个类别只可以继承自一个父类。
 
-C# 不支持多重继承。但是，您可以使用接口来实现多重继承。下面的程序演示了这点：
+C# 不支持多重继承。但是，可以使用接口来实现多重继承。下面的程序演示了这点：
 
 ```cs
 using System;
@@ -2288,4 +2288,928 @@ namespace InheritanceApplication
 }
 ```
 
+**C#多态性**
 
+多态是同一个行为具有多个不同表现形式或形态的能力。
+
+多态性意味着有多重形式。在面向对象编程范式中，多态性往往表现为"一个接口，多个功能"。
+
+多态性可以是静态的或动态的。在静态多态性中，函数的响应是在编译时发生的。在动态多态性中，函数的响应是在运行时发生的。
+
+在 C# 中，每个类型都是多态的，因为包括用户定义类型在内的所有类型都继承自 Object。
+
+多态就是同一个接口，使用不同的实例而执行不同操作，如图所示：
+
+**静态多态性**
+
+在编译时，函数和对象的连接机制被称为早期绑定，也被称为静态绑定。C# 提供了两种技术来实现静态多态性。分别为：
+
+* **函数重载**
+
+可以在同一个范围内对相同的函数名有多个定义。函数的定义必须彼此不同，可以是参数列表中的参数类型不同，也可以是参数个数不同。不能重载只有返回类型不同的函数声明。
+
+```cs
+using System;
+namespace PolymorphismApplication
+{
+    public class TestData  
+    {  
+        public int Add(int a, int b, int c)  
+        {  
+            return a + b + c;  
+        }  
+        public int Add(int a, int b)  
+        {  
+            return a + b;  
+        }  
+    }  
+    class Program  
+    {  
+        static void Main(string[] args)  
+        {  
+            TestData dataClass = new TestData();
+            int add1 = dataClass.Add(1, 2);  
+            int add2 = dataClass.Add(1, 2, 3);
+
+            Console.WriteLine("add1 :" + add1);
+            Console.WriteLine("add2 :" + add2);  
+        }  
+    }  
+}
+```
+
+```cs
+using System;
+namespace PolymorphismApplication
+{
+   class Printdata
+   {
+      void print(int i)
+      {
+         Console.WriteLine("输出整型: {0}", i );
+      }
+
+      void print(double f)
+      {
+         Console.WriteLine("输出浮点型: {0}" , f);
+      }
+
+      void print(string s)
+      {
+         Console.WriteLine("输出字符串: {0}", s);
+      }
+      static void Main(string[] args)
+      {
+         Printdata p = new Printdata();
+         // 调用 print 来打印整数
+         p.print(1);
+         // 调用 print 来打印浮点数
+         p.print(1.23);
+         // 调用 print 来打印字符串
+         p.print("Hello Runoob");
+         Console.ReadKey();
+      }
+   }
+}
+```
+
+* **运算符重载**
+
+**动态多态性**
+
+C# 允许使用关键字 `abstract` 创建抽象类，用于提供接口的部分类的实现。当一个派生类继承自该抽象类时，实现即完成。抽象类包含抽象方法，抽象方法可被派生类实现。派生类具有更专业的功能。
+
+请注意，下面是有关抽象类的一些规则：
+
+* 不能创建一个抽象类的实例。
+* 不能在一个抽象类外部声明一个抽象方法。
+* 通过在类定义前面放置关键字 sealed，可以将类声明为密封类。当一个类被声明为 sealed 时，它不能被继承。抽象类不能被声明为 sealed。
+
+```cs
+using System;
+namespace PolymorphismApplication
+{
+   abstract class Shape
+   {
+       abstract public int area();
+   }
+   class Rectangle:  Shape
+   {
+      private int length;
+      private int width;
+      public Rectangle( int a=0, int b=0)
+      {
+         length = a;
+         width = b;
+      }
+      public override int area ()
+      {
+         Console.WriteLine("Rectangle 类的面积：");
+         return (width * length);
+      }
+   }
+
+   class RectangleTester
+   {
+      static void Main(string[] args)
+      {
+         Rectangle r = new Rectangle(10, 7);
+         double a = r.area();
+         Console.WriteLine("面积： {0}",a);
+         Console.ReadKey();
+      }
+   }
+}
+```
+
+当有一个定义在类中的函数需要在继承类中实现时，可以使用虚方法。
+
+虚方法是使用关键字 virtual 声明的。
+
+虚方法可以在不同的继承类中有不同的实现。
+
+对虚方法的调用是在运行时发生的。
+
+动态多态性是通过 抽象类 和 虚方法 实现的。
+
+以下实例创建了 Shape 基类，并创建派生类 Circle、 Rectangle、Triangle， Shape 类提供一个名为 Draw 的虚拟方法，在每个派生类中重写该方法以绘制该类的指定形状。
+
+```cs
+using System;
+using System.Collections.Generic;
+
+public class Shape
+{
+    public int X { get; private set; }
+    public int Y { get; private set; }
+    public int Height { get; set; }
+    public int Width { get; set; }
+   
+    // 虚方法
+    public virtual void Draw()
+    {
+        Console.WriteLine("执行基类的画图任务");
+    }
+}
+
+class Circle : Shape
+{
+    public override void Draw()
+    {
+        Console.WriteLine("画一个圆形");
+        base.Draw();
+    }
+}
+class Rectangle : Shape
+{
+    public override void Draw()
+    {
+        Console.WriteLine("画一个长方形");
+        base.Draw();
+    }
+}
+class Triangle : Shape
+{
+    public override void Draw()
+    {
+        Console.WriteLine("画一个三角形");
+        base.Draw();
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // 创建一个 List<Shape> 对象，并向该对象添加 Circle、Triangle 和 Rectangle
+        var shapes = new List<Shape>
+        {
+            new Rectangle(),
+            new Triangle(),
+            new Circle()
+        };
+
+        // 使用 foreach 循环对该列表的派生类进行循环访问，并对其中的每个 Shape 对象调用 Draw 方法
+        foreach (var shape in shapes)
+        {
+            shape.Draw();
+        }
+
+        Console.WriteLine("按下任意键退出。");
+        Console.ReadKey();
+    }
+}
+```
+
+```cs
+using System;
+namespace PolymorphismApplication
+{
+   class Shape
+   {
+      protected int width, height;
+      public Shape( int a=0, int b=0)
+      {
+         width = a;
+         height = b;
+      }
+      public virtual int area()
+      {
+         Console.WriteLine("父类的面积：");
+         return 0;
+      }
+   }
+   class Rectangle: Shape
+   {
+      public Rectangle( int a=0, int b=0): base(a, b)
+      {
+
+      }
+      public override int area ()
+      {
+         Console.WriteLine("Rectangle 类的面积：");
+         return (width * height);
+      }
+   }
+   class Triangle: Shape
+   {
+      public Triangle(int a = 0, int b = 0): base(a, b)
+      {
+     
+      }
+      public override int area()
+      {
+         Console.WriteLine("Triangle 类的面积：");
+         return (width * height / 2);
+      }
+   }
+   class Caller
+   {
+      public void CallArea(Shape sh)
+      {
+         int a;
+         a = sh.area();
+         Console.WriteLine("面积： {0}", a);
+      }
+   }  
+   class Tester
+   {
+     
+      static void Main(string[] args)
+      {
+         Caller c = new Caller();
+         Rectangle r = new Rectangle(10, 7);
+         Triangle t = new Triangle(10, 5);
+         c.CallArea(r);
+         c.CallArea(t);
+         Console.ReadKey();
+      }
+   }
+}
+```
+
+**C# 运算符重载**
+
+可以重定义或重载 C# 中内置的运算符。因此，程序员也可以使用用户自定义类型的运算符。重载运算符是具有特殊名称的函数，是通过关键字 `operator` 后跟运算符的符号来定义的。与其他函数一样，重载运算符有返回类型和参数列表。
+
+```cs
+public static Box operator+ (Box b, Box c)
+{
+   Box box = new Box();
+   box.length = b.length + c.length;
+   box.breadth = b.breadth + c.breadth;
+   box.height = b.height + c.height;
+   return box;
+}
+```
+
+**运算符重载的实现**
+
+```cs
+using System;
+
+namespace OperatorOvlApplication
+{
+   class Box
+   {
+      private double length;      // 长度
+      private double breadth;     // 宽度
+      private double height;      // 高度
+
+      public double getVolume()
+      {
+         return length * breadth * height;
+      }
+      public void setLength( double len )
+      {
+         length = len;
+      }
+
+      public void setBreadth( double bre )
+      {
+         breadth = bre;
+      }
+
+      public void setHeight( double hei )
+      {
+         height = hei;
+      }
+      // 重载 + 运算符来把两个 Box 对象相加
+      public static Box operator+ (Box b, Box c)
+      {
+         Box box = new Box();
+         box.length = b.length + c.length;
+         box.breadth = b.breadth + c.breadth;
+         box.height = b.height + c.height;
+         return box;
+      }
+
+   }
+
+   class Tester
+   {
+      static void Main(string[] args)
+      {
+         Box Box1 = new Box();         // 声明 Box1，类型为 Box
+         Box Box2 = new Box();         // 声明 Box2，类型为 Box
+         Box Box3 = new Box();         // 声明 Box3，类型为 Box
+         double volume = 0.0;          // 体积
+
+         // Box1 详述
+         Box1.setLength(6.0);
+         Box1.setBreadth(7.0);
+         Box1.setHeight(5.0);
+
+         // Box2 详述
+         Box2.setLength(12.0);
+         Box2.setBreadth(13.0);
+         Box2.setHeight(10.0);
+
+         // Box1 的体积
+         volume = Box1.getVolume();
+         Console.WriteLine("Box1 的体积： {0}", volume);
+
+         // Box2 的体积
+         volume = Box2.getVolume();
+         Console.WriteLine("Box2 的体积： {0}", volume);
+
+         // 把两个对象相加
+         Box3 = Box1 + Box2;
+
+         // Box3 的体积
+         volume = Box3.getVolume();
+         Console.WriteLine("Box3 的体积： {0}", volume);
+         Console.ReadKey();
+      }
+   }
+}
+```
+
+**可重载和不可重载运算符**
+
+运算符|描述
+-|-
+`+, -, !, ~, ++, --`|	这些一元运算符只有一个操作数，且可以被重载。
+`+, -, *, /, %`|	这些二元运算符带有两个操作数，且可以被重载。
+`==, !=, <, >, <=, >=`|	这些比较运算符可以被重载。
+`&&, ||`|	这些条件逻辑运算符不能被直接重载。
+`+=, -=, *=, /=, %=`|	这些赋值运算符不能被重载。
+`=, ., ?:, ->, new, is, sizeof, typeof`|	这些运算符不能被重载。
+
+```cs
+using System;
+
+namespace OperatorOvlApplication
+{
+    class Box
+    {
+       private double length;      // 长度
+       private double breadth;     // 宽度
+       private double height;      // 高度
+     
+       public double getVolume()
+       {
+         return length * breadth * height;
+       }
+      public void setLength( double len )
+      {
+          length = len;
+      }
+
+      public void setBreadth( double bre )
+      {
+          breadth = bre;
+      }
+
+      public void setHeight( double hei )
+      {
+          height = hei;
+      }
+      // 重载 + 运算符来把两个 Box 对象相加
+      public static Box operator+ (Box b, Box c)
+      {
+          Box box = new Box();
+          box.length = b.length + c.length;
+          box.breadth = b.breadth + c.breadth;
+          box.height = b.height + c.height;
+          return box;
+      }
+     
+      public static bool operator == (Box lhs, Box rhs)
+      {
+          bool status = false;
+          if (lhs.length == rhs.length && lhs.height == rhs.height
+             && lhs.breadth == rhs.breadth)
+          {
+              status = true;
+          }
+          return status;
+      }
+      public static bool operator !=(Box lhs, Box rhs)
+      {
+          bool status = false;
+          if (lhs.length != rhs.length || lhs.height != rhs.height
+              || lhs.breadth != rhs.breadth)
+          {
+              status = true;
+          }
+          return status;
+      }
+      public static bool operator <(Box lhs, Box rhs)
+      {
+          bool status = false;
+          if (lhs.length < rhs.length && lhs.height
+              < rhs.height && lhs.breadth < rhs.breadth)
+          {
+              status = true;
+          }
+          return status;
+      }
+
+      public static bool operator >(Box lhs, Box rhs)
+      {
+          bool status = false;
+          if (lhs.length > rhs.length && lhs.height
+              > rhs.height && lhs.breadth > rhs.breadth)
+          {
+              status = true;
+          }
+          return status;
+      }
+
+      public static bool operator <=(Box lhs, Box rhs)
+      {
+          bool status = false;
+          if (lhs.length <= rhs.length && lhs.height
+              <= rhs.height && lhs.breadth <= rhs.breadth)
+          {
+              status = true;
+          }
+          return status;
+      }
+
+      public static bool operator >=(Box lhs, Box rhs)
+      {
+          bool status = false;
+          if (lhs.length >= rhs.length && lhs.height
+             >= rhs.height && lhs.breadth >= rhs.breadth)
+          {
+              status = true;
+          }
+          return status;
+      }
+      public override string ToString()
+      {
+          return String.Format("({0}, {1}, {2})", length, breadth, height);
+      }
+   
+   }
+   
+   class Tester
+   {
+      static void Main(string[] args)
+      {
+        Box Box1 = new Box();          // 声明 Box1，类型为 Box
+        Box Box2 = new Box();          // 声明 Box2，类型为 Box
+        Box Box3 = new Box();          // 声明 Box3，类型为 Box
+        Box Box4 = new Box();
+        double volume = 0.0;   // 体积
+
+        // Box1 详述
+        Box1.setLength(6.0);
+        Box1.setBreadth(7.0);
+        Box1.setHeight(5.0);
+
+        // Box2 详述
+        Box2.setLength(12.0);
+        Box2.setBreadth(13.0);
+        Box2.setHeight(10.0);
+
+       // 使用重载的 ToString() 显示两个盒子
+        Console.WriteLine("Box1： {0}", Box1.ToString());
+        Console.WriteLine("Box2： {0}", Box2.ToString());
+       
+        // Box1 的体积
+        volume = Box1.getVolume();
+        Console.WriteLine("Box1 的体积： {0}", volume);
+
+        // Box2 的体积
+        volume = Box2.getVolume();
+        Console.WriteLine("Box2 的体积： {0}", volume);
+
+        // 把两个对象相加
+        Box3 = Box1 + Box2;
+        Console.WriteLine("Box3： {0}", Box3.ToString());
+        // Box3 的体积
+        volume = Box3.getVolume();
+        Console.WriteLine("Box3 的体积： {0}", volume);
+
+        //comparing the boxes
+        if (Box1 > Box2)
+          Console.WriteLine("Box1 大于 Box2");
+        else
+          Console.WriteLine("Box1 不大于 Box2");
+        if (Box1 < Box2)
+          Console.WriteLine("Box1 小于 Box2");
+        else
+          Console.WriteLine("Box1 不小于 Box2");
+        if (Box1 >= Box2)
+          Console.WriteLine("Box1 大于等于 Box2");
+        else
+          Console.WriteLine("Box1 不大于等于 Box2");
+        if (Box1 <= Box2)
+          Console.WriteLine("Box1 小于等于 Box2");
+        else
+          Console.WriteLine("Box1 不小于等于 Box2");
+        if (Box1 != Box2)
+          Console.WriteLine("Box1 不等于 Box2");
+        else
+          Console.WriteLine("Box1 等于 Box2");
+        Box4 = Box3;
+        if (Box3 == Box4)
+          Console.WriteLine("Box3 等于 Box4");
+        else
+          Console.WriteLine("Box3 不等于 Box4");
+
+        Console.ReadKey();
+      }
+    }
+}
+```
+
+**C#接口（Interface）**
+
+接口定义了所有类继承接口时应遵循的语法合同。接口定义了语法合同 "是什么" 部分，派生类定义了语法合同 "怎么做" 部分。
+
+接口定义了属性、方法和事件，这些都是接口的成员。接口只包含了成员的声明。成员的定义是派生类的责任。接口提供了派生类应遵循的标准结构。
+
+接口使得实现接口的类或结构在形式上保持一致。
+
+抽象类在某种程度上与接口类似，但是，它们大多只是用在当只有少数方法由基类声明由派生类实现时。
+
+**定义接口**
+
+```cs
+using System;
+
+interface IMyInterface
+{
+   // 接口成员
+   void MethodToImplement();
+}
+
+class InterfaceImplementer : IMyInterface
+{
+    static void Main()
+    {
+        InterfaceImplementer iImp = new InterfaceImplementer();
+        iImp.MethodToImplement();
+    }
+
+    public void MethodToImplement()
+    {
+        Console.WriteLine("MethodToImplement() called.");
+    }
+}
+```
+
+**接口继承: InterfaceInheritance.cs**
+
+```cs
+using System;
+
+interface IParentInterface
+{
+    void ParentInterfaceMethod();
+}
+
+interface IMyInterface : IParentInterface
+{
+    void MethodToImplement();
+}
+
+class InterfaceImplementer : IMyInterface
+{
+    static void Main()
+    {
+        InterfaceImplementer iImp = new InterfaceImplementer();
+        iImp.MethodToImplement();
+        iImp.ParentInterfaceMethod();
+    }
+
+    public void MethodToImplement()
+    {
+        Console.WriteLine("MethodToImplement() called.");
+    }
+
+    public void ParentInterfaceMethod()
+    {
+        Console.WriteLine("ParentInterfaceMethod() called.");
+    }
+}
+```
+
+*注意：*
+
+* 接口方法不能用public abstract等修饰。接口内不能有字段变量，构造函数。
+* 接口内可以定义属性（有get和set的方法）。如string color { get ; set ; }这种。
+* 实现接口时，必须和接口的格式一致。
+* 必须实现接口的所有方法。
+
+接口的定义是指定一组函数成员而不实现成员的引用类型，其它类型和接口可以继承接口。定义还是很好理解的，但是没有反映特点，接口主要有以下特点：
+
+* (1)通过接口可以实现多重继承，C# 接口的成员不能有 public、protected、internal、private 等修饰符。原因很简单，接口里面的方法都需要由外面接口实现去实现方法体，那么其修饰符必然是 public。C# 接口中的成员默认是 public 的，java 中是可以加 public 的。
+* (2)接口成员不能有 new、static、abstract、override、virtual 修饰符。有一点要注意，当一个接口实现一个接口，这2个接口中有相同的方法时，可用 new 关键字隐藏父接口中的方法。
+* (3)接口中只包含成员的签名，接口没有构造函数，所有不能直接使用 new 对接口进行实例化。接口中只能包含方法、属性、事件和索引的组合。接口一旦被实现，实现类必须实现接口中的所有成员，除非实现类本身是抽象类。
+* (4)C# 是单继承，接口是解决 C# 里面类可以同时继承多个基类的问题。
+
+**C# 命名空间（Namespace）**
+
+命名空间的设计目的是提供一种让一组名称与其他名称分隔开的方式。在一个命名空间中声明的类的名称与另一个命名空间中声明的相同的类的名称不冲突。
+
+```cs
+using System;
+namespace first_space
+{
+   class namespace_cl
+   {
+      public void func()
+      {
+         Console.WriteLine("Inside first_space");
+      }
+   }
+}
+namespace second_space
+{
+   class namespace_cl
+   {
+      public void func()
+      {
+         Console.WriteLine("Inside second_space");
+      }
+   }
+}  
+class TestClass
+{
+   static void Main(string[] args)
+   {
+      first_space.namespace_cl fc = new first_space.namespace_cl();
+      second_space.namespace_cl sc = new second_space.namespace_cl();
+      fc.func();
+      sc.func();
+      Console.ReadKey();
+   }
+}
+```
+
+**using 关键字**
+
+using 关键字表明程序使用的是给定命名空间中的名称。例如，我们在程序中使用 System 命名空间，其中定义了类 Console。我们可以只写：
+
+```cs
+using System;
+using first_space;
+using second_space;
+
+namespace first_space
+{
+   class abc
+   {
+      public void func()
+      {
+         Console.WriteLine("Inside first_space");
+      }
+   }
+}
+namespace second_space
+{
+   class efg
+   {
+      public void func()
+      {
+         Console.WriteLine("Inside second_space");
+      }
+   }
+}  
+class TestClass
+{
+   static void Main(string[] args)
+   {
+      abc fc = new abc();
+      efg sc = new efg();
+      fc.func();
+      sc.func();
+      Console.ReadKey();
+   }
+}
+```
+
+**嵌套命名空间**
+
+```cs
+namespace namespace_name1 
+{
+   // 代码声明
+   namespace namespace_name2 
+   {
+     // 代码声明
+   }
+}
+```
+
+```cs
+using System;
+using SomeNameSpace;
+using SomeNameSpace.Nested;
+
+namespace SomeNameSpace
+{
+    public class MyClass
+    {
+        static void Main()
+        {
+            Console.WriteLine("In SomeNameSpace");
+            Nested.NestedNameSpaceClass.SayHello();
+        }
+    }
+
+    // 内嵌命名空间
+    namespace Nested  
+    {
+        public class NestedNameSpaceClass
+        {
+            public static void SayHello()
+            {
+                Console.WriteLine("In Nested");
+            }
+        }
+    }
+}
+```
+
+**C#预处理器指令**
+
+预处理器指令指导编译器在实际编译开始之前对信息进行预处理。
+
+所有的预处理器指令都是以 # 开始。且在一行上，只有空白字符可以出现在预处理器指令之前。预处理器指令不是语句，所以它们不以分号（;）结束。
+
+C# 编译器没有一个单独的预处理器，但是，指令被处理时就像是有一个单独的预处理器一样。在 C# 中，预处理器指令用于在条件编译中起作用。与 C 和 C++ 不同的是，它们不是用来创建宏。一个预处理器指令必须是该行上的唯一指令。
+
+**C# 预处理器指令列表**
+
+预处理器指令|	描述
+-|-
+`#define`|	它用于定义一系列成为符号的字符。
+`#undef`|	它用于取消定义符号。
+`#if`|	它用于测试符号是否为真。
+`#else`|	它用于创建复合条件指令，与 #if 一起使用。
+`#elif`|	它用于创建复合条件指令。
+`#endif`|	指定一个条件指令的结束。
+`#line`|	它可以让您修改编译器的行数以及（可选地）输出错误和警告的文件名。
+`#error`|	它允许从代码的指定位置生成一个错误。
+`#warning`|	它允许从代码的指定位置生成一级警告。
+`#region`|	它可以让您在使用 Visual Studio Code Editor 的大纲特性时，指定一个可展开或折叠的代码块。
+`#endregion`|	它标识着 #region 块的结束。
+
+**#define 预处理器**
+
+#define 预处理器指令创建符号常量。
+
+#define 允许定义一个符号，这样，通过使用符号作为传递给 #if 指令的表达式，表达式将返回 true。它的语法如下：
+
+```cs
+#define PI
+using System;
+namespace PreprocessorDAppl
+{
+   class Program
+   {
+      static void Main(string[] args)
+      {
+         #if (PI)
+            Console.WriteLine("PI is defined");
+         #else
+            Console.WriteLine("PI is not defined");
+         #endif
+         Console.ReadKey();
+      }
+   }
+}
+```
+
+**条件指令**
+
+可以使用 #if 指令来创建一个条件指令。条件指令用于测试符号是否为真。如果为真，编译器会执行 #if 和下一个指令之间的代码。
+
+条件指令的语法：
+
+```cs
+#if symbol [operator symbol]...
+```
+
+symbol 是要测试的符号名称。您也可以使用 true 和 false，或在符号前放置否定运算符。
+
+常见运算符有：
+
+* == (等于)
+* != (不等于)
+* && (与)
+* || (或)
+
+也可以用括号把符号和运算符进行分组。条件指令用于在调试版本或编译指定配置时编译代码。一个以 `#if` 指令开始的条件指令，必须显示地以一个 `#endif` 指令终止。
+
+```cs
+#define DEBUG
+#define VC_V10
+using System;
+public class TestClass
+{
+   public static void Main()
+   {
+
+      #if (DEBUG && !VC_V10)
+         Console.WriteLine("DEBUG is defined");
+      #elif (!DEBUG && VC_V10)
+         Console.WriteLine("VC_V10 is defined");
+      #elif (DEBUG && VC_V10)
+         Console.WriteLine("DEBUG and VC_V10 are defined");
+      #else
+         Console.WriteLine("DEBUG and VC_V10 are not defined");
+      #endif
+      Console.ReadKey();
+   }
+}
+```
+
+在程序调试和运行上有重要的作用。比如预处理器指令可以禁止编译器编译代码的某一部分，如果计划发布两个版本的代码，即基本版本和有更多功能的企业版本，就可以使用这些预处理器指令来控制。在编译软件的基本版本时，使用预处理器指令还可以禁止编译器编译于额外功能相关的代码。另外，在编写提供调试信息的代码时，也可以使用预处理器指令进行控制。总的来说和普通的控制语句（if等）功能类似，方便在于预处理器指令包含的未执行部分是不需要编译的。
+
+**#warning 和 #error**
+
+当编译器遇到它们时，会分别产生警告或错误。如果编译器遇到 #warning 指令，会给用户显示 #warning 指令后面的文本，之后编译继续进行。如果编译器遇到 #error 指令，就会给用户显示后面的文本，作为一条编译错误消息，然后会立即退出编译。使用这两条指令可以检查 #define 语句是不是做错了什么事，使用 #warning 语句可以提醒自己执行某个操作。
+
+```cs
+#if DEBUG && RELEASE  
+#error "You've defined DEBUG and RELEASE simultaneously!"  
+#endif  
+#warning "Don't forget to remove this line before the boss tests the code!"  
+Console.WriteLine("*I hate this job.*");
+```
+
+**#region 和 #endregion**
+
+#region 和 #endregion 指令用于把一段代码标记为有给定名称的一个块，如下所示:
+
+```cs
+#region Member Field Declarations
+int x;
+double d;
+Currency balance;
+#endregion
+```
+
+**#line**
+
+#line 指令可以用于改变编译器在警告和错误信息中显示的文件名和行号信息，不常用。
+
+如果编写代码时，在把代码发送给编译器前，要使用某些软件包改变输入的代码，就可以使用这个指令，因为这意味着编译器报告的行号或文件名与文件中的行号或编辑的文件名不匹配。#line指令可以用于还原这种匹配。也可以使用语法#line default把行号还原为默认的行号：
+
+```cs
+#line 164 "Core.cs" // 在文件的第 164 行
+// Core.cs, before the intermediate
+// package mangles it.
+// later on
+#line default // 恢复默认行号
+```
+
+**#pragma**
+
+#pragma 指令可以抑制或还原指定的编译警告。与命令行选项不同，#pragma 指令可以在类或方法级别执行，对抑制警告的内容和抑制的时间进行更精细的控制。如下：
+
+```cs
+#pragma warning disable 169    // 取消编号 169 的警告（字段未使用的警告）
+public class MyClass
+{
+    int neverUsedField;       // 编译整个 MyClass 类时不会发出警告
+}
+#pragma warning restore 169   // 恢复编号 169 的警告
+```
