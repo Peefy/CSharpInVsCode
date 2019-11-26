@@ -220,6 +220,20 @@ namespace CSharpInVsCode.Note
 
             Console.WriteLine("在方法调用之后，a 的值： {0}", a);
 
+            int[] n = new int[10]; /* n 是一个带有 10 个整数的数组 */
+
+            /* 初始化数组 n 中的元素 */
+            for (i = 0; i < 10; i++)
+            {
+                n[i] = i + 100;
+            }
+
+            /* 输出每个数组元素的值 */
+            for (i = 0; i < 10; i++)
+            {
+                Console.WriteLine("Element[{0}] = {1}", i, n[i]);
+            }
+
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
