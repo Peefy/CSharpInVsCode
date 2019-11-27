@@ -159,6 +159,17 @@ namespace CSharpInVsCode.Note
             x = temp;
         }
 
+
+        private static void showMatch(string text, string expr)
+        {
+            Console.WriteLine("The Expression: " + expr);
+            MatchCollection mc = Regex.Matches(text, expr);
+            foreach (Match m in mc)
+            {
+                Console.WriteLine(m);
+            }
+        }
+
         public static void PrintNote()
         {
             Console.WriteLine("Hello Csharp Note!");
@@ -433,17 +444,17 @@ namespace CSharpInVsCode.Note
             else
                 Console.WriteLine("Box3 不等于 Box4");
 
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
+            string input = "1851 1999 1950 1905 2003";
+            string pattern = @"(?<=19)\d{2}\b";
+
+            foreach (Match match in Regex.Matches(input, pattern))
+                Console.WriteLine(match.Value);
+
+            string str = "make maze and manage to measure it";
+
+            Console.WriteLine("Matching words start with 'm' and ends with 'e':");
+            showMatch(str, @"\bm\S*e\b");
+
             Console.WriteLine();
         }
     }
