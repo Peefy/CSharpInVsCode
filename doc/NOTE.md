@@ -3670,7 +3670,7 @@ namespace FileIOApplication
 
 **C# 特性（Attribute）**
 
-`特性（Attribute）`是用于在运行时传递程序中各种元素（比如类、方法、结构、枚举、组件等）的行为信息的声明性标签。您可以通过使用特性向程序添加声明性信息。一个声明性标签是通过放置在它所应用的元素前面的方括号（[ ]）来描述的。
+`特性（Attribute）`是用于在运行时传递程序中各种元素（比如类、方法、结构、枚举、组件等）的行为信息的声明性标签。可以通过使用特性向程序添加声明性信息。一个声明性标签是通过放置在它所应用的元素前面的方括号（[ ]）来描述的。
 
 `特性（Attribute）`用于添加元数据，如编译器指令和注释、描述、方法、类等其他信息。.Net 框架提供了两种类型的特性：预定义特性和自定义特性。
 
@@ -3742,7 +3742,7 @@ class Test
 
 **Obsolete**
 
-这个预定义特性标记了不应被使用的程序实体。它可以让您通知编译器丢弃某个特定的目标元素。例如，当一个新方法被用在一个类中，但是您仍然想要保持类中的旧方法，您可以通过显示一个应该使用新方法，而不是旧方法的消息，来把它标记为 obsolete（过时的）。
+这个预定义特性标记了不应被使用的程序实体。它可以让通知编译器丢弃某个特定的目标元素。例如，当一个新方法被用在一个类中，但是仍然想要保持类中的旧方法，可以通过显示一个应该使用新方法，而不是旧方法的消息，来把它标记为 obsolete（过时的）。
 
 规定该特性的语法如下：
 
@@ -3792,7 +3792,7 @@ public class MyClass
 * 在目标程序元素上应用自定义特性
 * 通过反射访问特性
 
-最后一个步骤包含编写一个简单的程序来读取元数据以便查找各种符号。元数据是用于描述其他数据的数据和信息。该程序应使用反射来在运行时访问特性。我们将在下一章详细讨论这点。
+最后一个步骤包含编写一个简单的程序来读取元数据以便查找各种符号。元数据是用于描述其他数据的数据和信息。该程序应使用反射来在运行时访问特性。将在下一章详细讨论这点。
 
 **声明自定义特性**
 
@@ -3817,7 +3817,7 @@ public class DeBugInfo : System.Attribute
 * 最后一次审查该代码的日期
 * 一个存储了开发人员标记的字符串消息
 
-我们的 DeBugInfo 类将带有三个用于存储前三个信息的私有属性（property）和一个用于存储消息的公有属性（property）。所以 bug 编号、开发人员名字和审查日期将是 DeBugInfo 类的必需的定位（ positional）参数，消息将是一个可选的命名（named）参数。
+的 DeBugInfo 类将带有三个用于存储前三个信息的私有属性（property）和一个用于存储消息的公有属性（property）。所以 bug 编号、开发人员名字和审查日期将是 DeBugInfo 类的必需的定位（ positional）参数，消息将是一个可选的命名（named）参数。
 
 每个特性必须至少有一个构造函数。必需的定位（ positional）参数应通过构造函数传递。下面的代码演示了 DeBugInfo 类：
 
@@ -3920,7 +3920,7 @@ class Rectangle
 * 条件方法不能是接口方法的实现。否则将发生编译时错误。
 * 如果条件方法用在“委托创建表达式”中，也会发生编译时错误
 
-这里需要注意的是：如果创建一个没有定义任何条件的方法，那么默认只要调用就总是会执行此方法，如果你想通过条件来判断执行，那么该方法上必须至少包含一个conditional特性所定义的条件，它才会响应你定义的条件
+这里需要注意的是：如果创建一个没有定义任何条件的方法，那么默认只要调用就总是会执行此方法，如果想通过条件来判断执行，那么该方法上必须至少包含一个conditional特性所定义的条件，它才会响应定义的条件
 
 **C# 反射（Reflection）**
 
@@ -3928,7 +3928,7 @@ class Rectangle
 
 程序集包含模块，而模块包含类型，类型又包含成员。反射则提供了封装程序集、模块和类型的对象。
 
-您可以使用反射动态地创建类型的实例，将类型绑定到现有对象，或从现有对象中获取类型。然后，可以调用类型的方法或访问其字段和属性。
+可以使用反射动态地创建类型的实例，将类型绑定到现有对象，或从现有对象中获取类型。然后，可以调用类型的方法或访问其字段和属性。
 
 **优缺点**
 
@@ -3954,9 +3954,9 @@ class Rectangle
 
 **查看元数据**
 
-我们已经在上面的章节中提到过，使用反射（Reflection）可以查看特性（attribute）信息。
+已经在上面的章节中提到过，使用反射（Reflection）可以查看特性（attribute）信息。
 
-System.Reflection 类的 MemberInfo 对象需要被初始化，用于发现与类相关的特性（attribute）。为了做到这点，您可以定义目标类的一个对象，如下：
+System.Reflection 类的 MemberInfo 对象需要被初始化，用于发现与类相关的特性（attribute）。为了做到这点，可以定义目标类的一个对象，如下：
 
 ```cs
 using System;
@@ -4149,7 +4149,7 @@ namespace BugFixApplication
 
 属性（Property）不会确定存储位置。相反，它们具有可读写或计算它们值的 访问器（accessors）。
 
-例如，有一个名为 Student 的类，带有 age、name 和 code 的私有域。我们不能在类的范围以外直接访问这些域，但是我们可以拥有访问这些私有域的属性。
+例如，有一个名为 Student 的类，带有 age、name 和 code 的私有域。不能在类的范围以外直接访问这些域，但是可以拥有访问这些私有域的属性。
 
 **访问器（Accessors）**
 
@@ -4402,11 +4402,11 @@ namespace Demo.cs
 
 **C# 索引器（Indexer）**
 
-索引器（Indexer） 允许一个对象可以像数组一样被索引。当您为类定义一个索引器时，该类的行为就会像一个 虚拟数组（virtual array） 一样。您可以使用数组访问运算符（[ ]）来访问该类的实例。
+索引器（Indexer） 允许一个对象可以像数组一样被索引。当为类定义一个索引器时，该类的行为就会像一个 虚拟数组（virtual array） 一样。可以使用数组访问运算符（[ ]）来访问该类的实例。
 
 **索引器（Indexer）的用途**
 
-索引器的行为的声明在某种程度上类似于属性（property）。就像属性（property），您可使用 get 和 set 访问器来定义索引器。但是，属性返回或设置一个特定的数据成员，而索引器返回或设置对象实例的一个特定值。换句话说，它把实例数据分为更小的部分，并索引每个部分，获取或设置每个部分。
+索引器的行为的声明在某种程度上类似于属性（property）。就像属性（property），可使用 get 和 set 访问器来定义索引器。但是，属性返回或设置一个特定的数据成员，而索引器返回或设置对象实例的一个特定值。换句话说，它把实例数据分为更小的部分，并索引每个部分，获取或设置每个部分。
 
 定义一个属性（property）包括提供属性名称。索引器定义的时候不带有名称，但带有 this 关键字，它指向对象实例。下面的实例演示了这个概念：
 
@@ -4676,7 +4676,7 @@ namespace DelegateAppl
 
 委托对象可使用 "+" 运算符进行合并。一个合并委托调用它所合并的两个委托。只有相同类型的委托可被合并。"-" 运算符可用于从合并的委托中移除组件委托。
 
-使用委托的这个有用的特点，您可以创建一个委托被调用时要调用的方法的调用列表。这被称为委托的 多播（multicasting），也叫组播。下面的程序演示了委托的多播：
+使用委托的这个有用的特点，可以创建一个委托被调用时要调用的方法的调用列表。这被称为委托的 多播（multicasting），也叫组播。下面的程序演示了委托的多播：
 
 ```cs
 using System;
@@ -4966,10 +4966,537 @@ namespace BoilerEventAppl
 
 类|	描述和用法
 -|-
-动态数组（ArrayList）|	它代表了可被单独索引的对象的有序集合。它基本上可以替代一个数组。但是，与数组不同的是，您可以使用索引在指定的位置添加和移除项目，动态数组会自动重新调整它的大小。它也允许在列表中进行动态内存分配、增加、搜索、排序各项。
-哈希表（Hashtable）|	它使用键来访问集合中的元素。当您使用键访问元素时，则使用哈希表，而且您可以识别一个有用的键值。哈希表中的每一项都有一个键/值对。键用于访问集合中的项目。
-排序列表（SortedList）|	它可以使用键和索引来访问列表中的项。排序列表是数组和哈希表的组合。它包含一个可使用键或索引访问各项的列表。如果您使用索引访问各项，则它是一个动态数组（ArrayList），如果您使用键访问各项，则它是一个哈希表（Hashtable）。集合中的各项总是按键值排序。
-堆栈（Stack）|	它代表了一个后进先出的对象集合。当您需要对各项进行后进先出的访问时，则使用堆栈。当您在列表中添加一项，称为推入元素，当您从列表中移除一项时，称为弹出元素。
-队列（Queue）|	它代表了一个先进先出的对象集合。当您需要对各项进行先进先出的访问时，则使用队列。当您在列表中添加一项，称为入队，当您从列表中移除一项时，称为出队。
-点阵列（BitArray）|	它代表了一个使用值 1 和 0 来表示的二进制数组。当您需要存储位，但是事先不知道位数时，则使用点阵列。您可以使用整型索引从点阵列集合中访问各项，索引从零开始。
+动态数组（ArrayList）|	它代表了可被单独索引的对象的有序集合。它基本上可以替代一个数组。但是，与数组不同的是，可以使用索引在指定的位置添加和移除项目，动态数组会自动重新调整它的大小。它也允许在列表中进行动态内存分配、增加、搜索、排序各项。
+哈希表（Hashtable）|	它使用键来访问集合中的元素。当使用键访问元素时，则使用哈希表，而且可以识别一个有用的键值。哈希表中的每一项都有一个键/值对。键用于访问集合中的项目。
+排序列表（SortedList）|	它可以使用键和索引来访问列表中的项。排序列表是数组和哈希表的组合。它包含一个可使用键或索引访问各项的列表。如果使用索引访问各项，则它是一个动态数组（ArrayList），如果使用键访问各项，则它是一个哈希表（Hashtable）。集合中的各项总是按键值排序。
+堆栈（Stack）|	它代表了一个后进先出的对象集合。当需要对各项进行后进先出的访问时，则使用堆栈。当在列表中添加一项，称为推入元素，当从列表中移除一项时，称为弹出元素。
+队列（Queue）|	它代表了一个先进先出的对象集合。当需要对各项进行先进先出的访问时，则使用队列。当在列表中添加一项，称为入队，当从列表中移除一项时，称为出队。
+点阵列（BitArray）|	它代表了一个使用值 1 和 0 来表示的二进制数组。当需要存储位，但是事先不知道位数时，则使用点阵列。可以使用整型索引从点阵列集合中访问各项，索引从零开始。
+
+**C# 泛型（Generic）**
+
+**泛型（Generic）** 允许延迟编写类或方法中的编程元素的数据类型的规范，直到实际在程序中使用它的时候。换句话说，泛型允许编写一个可以与任何数据类型一起工作的类或方法。
+
+可以通过数据类型的替代参数编写类或方法的规范。当编译器遇到类的构造函数或方法的函数调用时，它会生成代码来处理指定的数据类型。下面这个简单的实例将有助于理解这个概念：
+
+```cs
+using System;
+using System.Collections.Generic;
+
+namespace GenericApplication
+{
+    public class MyGenericArray<T>
+    {
+        private T[] array;
+        public MyGenericArray(int size)
+        {
+            array = new T[size + 1];
+        }
+        public T getItem(int index)
+        {
+            return array[index];
+        }
+        public void setItem(int index, T value)
+        {
+            array[index] = value;
+        }
+    }
+           
+    class Tester
+    {
+        static void Main(string[] args)
+        {
+            // 声明一个整型数组
+            MyGenericArray<int> intArray = new MyGenericArray<int>(5);
+            // 设置值
+            for (int c = 0; c < 5; c++)
+            {
+                intArray.setItem(c, c*5);
+            }
+            // 获取值
+            for (int c = 0; c < 5; c++)
+            {
+                Console.Write(intArray.getItem(c) + " ");
+            }
+            Console.WriteLine();
+            // 声明一个字符数组
+            MyGenericArray<char> charArray = new MyGenericArray<char>(5);
+            // 设置值
+            for (int c = 0; c < 5; c++)
+            {
+                charArray.setItem(c, (char)(c+97));
+            }
+            // 获取值
+            for (int c = 0; c < 5; c++)
+            {
+                Console.Write(charArray.getItem(c) + " ");
+            }
+            Console.WriteLine();
+            Console.ReadKey();
+        }
+    }
+}
+```
+
+**泛型（Generic）的特性**
+
+使用泛型是一种增强程序功能的技术，具体表现在以下几个方面：
+
+* 它有助于最大限度地重用代码、保护类型的安全以及提高性能。
+* 可以创建泛型集合类。.NET 框架类库在 System.Collections.Generic 命名空间中包含了一些新的泛型集合类。可以使用这些泛型集合类来替代 System.Collections 中的集合类。
+* 可以创建自己的泛型接口、泛型类、泛型方法、泛型事件和泛型委托。
+* 可以对泛型类进行约束以访问特定数据类型的方法。
+* 关于泛型数据类型中使用的类型的信息可在运行时通过使用反射获取。
+
+**泛型（Generic）方法**
+
+```cs
+using System;
+using System.Collections.Generic;
+
+namespace GenericMethodAppl
+{
+    class Program
+    {
+        static void Swap<T>(ref T lhs, ref T rhs)
+        {
+            T temp;
+            temp = lhs;
+            lhs = rhs;
+            rhs = temp;
+        }
+        static void Main(string[] args)
+        {
+            int a, b;
+            char c, d;
+            a = 10;
+            b = 20;
+            c = 'I';
+            d = 'V';
+
+            // 在交换之前显示值
+            Console.WriteLine("Int values before calling swap:");
+            Console.WriteLine("a = {0}, b = {1}", a, b);
+            Console.WriteLine("Char values before calling swap:");
+            Console.WriteLine("c = {0}, d = {1}", c, d);
+
+            // 调用 swap
+            Swap<int>(ref a, ref b);
+            Swap<char>(ref c, ref d);
+
+            // 在交换之后显示值
+            Console.WriteLine("Int values after calling swap:");
+            Console.WriteLine("a = {0}, b = {1}", a, b);
+            Console.WriteLine("Char values after calling swap:");
+            Console.WriteLine("c = {0}, d = {1}", c, d);
+            Console.ReadKey();
+        }
+    }
+}
+```
+
+**泛型（Generic）委托**
+
+通过类型参数定义泛型委托。例如：
+
+```cs
+delegate T NumberChanger<T>(T n);
+```
+
+```cs
+using System;
+using System.Collections.Generic;
+
+delegate T NumberChanger<T>(T n);
+namespace GenericDelegateAppl
+{
+    class TestDelegate
+    {
+        static int num = 10;
+        public static int AddNum(int p)
+        {
+            num += p;
+            return num;
+        }
+
+        public static int MultNum(int q)
+        {
+            num *= q;
+            return num;
+        }
+        public static int getNum()
+        {
+            return num;
+        }
+
+        static void Main(string[] args)
+        {
+            // 创建委托实例
+            NumberChanger<int> nc1 = new NumberChanger<int>(AddNum);
+            NumberChanger<int> nc2 = new NumberChanger<int>(MultNum);
+            // 使用委托对象调用方法
+            nc1(25);
+            Console.WriteLine("Value of Num: {0}", getNum());
+            nc2(5);
+            Console.WriteLine("Value of Num: {0}", getNum());
+            Console.ReadKey();
+        }
+    }
+}
+```
+
+在声明泛型方法/泛型类的时候，可以给泛型加上一定的约束来满足我们特定的一些条件。
+
+```cs
+using System;
+using System.Web.Caching;
+
+namespace Demo.CacheManager
+{
+   public class CacheHelper<T> where T:new()
+   {
+      
+   }
+}
+```
+
+泛型限定条件：
+
+* T：结构（类型参数必须是值类型。可以指定除 Nullable 以外的任何值类型）
+* T：类 （类型参数必须是引用类型，包括任何类、接口、委托或数组类型）
+* T：new() （类型参数必须具有无参数的公共构造函数。当与其他约束一起使用时new() 约束必须最后指定）
+* T：<基类名> 类型参数必须是指定的基类或派生自指定的基类
+* T：<接口名称> 类型参数必须是指定的接口或实现指定的接口。可以指定多个接口约束。约束接口也可以是泛型的。
+* T：U
+
+```cs
+using System;
+using System.Web.Caching;
+
+namespace Xy.CacheManager
+{
+  public class CacheHelper<T>
+  {
+      //获取缓存实体
+      public static T Get(Cache cache,string cacheKey)
+      {
+        //....缓存操作
+      } 
+      //插入缓存
+      public static void Set(Cache cache T tEntity,string cacheKey)
+      {
+        //....缓存操作
+      }
+  }
+}
+```
+
+**C# 匿名方法**
+
+我们已经提到过，委托是用于引用与其具有相同标签的方法。换句话说，您可以使用委托对象调用可由委托引用的方法。
+
+匿名方法（Anonymous methods） 提供了一种传递代码块作为委托参数的技术。匿名方法是没有名称只有主体的方法。
+
+在匿名方法中您不需要指定返回类型，它是从方法主体内的 return 语句推断的。
+
+*编写匿名方法的语法*-匿名方法是通过使用 delegate 关键字创建委托实例来声明的。例如：
+
+```cs
+delegate void NumberChanger(int n);
+
+NumberChanger nc = delegate(int x)
+{
+    Console.WriteLine("Anonymous Method: {0}", x);
+};
+
+```
+
+```cs
+using System;
+
+delegate void NumberChanger(int n);
+namespace DelegateAppl
+{
+    class TestDelegate
+    {
+        static int num = 10;
+        public static void AddNum(int p)
+        {
+            num += p;
+            Console.WriteLine("Named Method: {0}", num);
+        }
+
+        public static void MultNum(int q)
+        {
+            num *= q;
+            Console.WriteLine("Named Method: {0}", num);
+        }
+
+        static void Main(string[] args)
+        {
+            // 使用匿名方法创建委托实例
+            NumberChanger nc = delegate(int x)
+            {
+               Console.WriteLine("Anonymous Method: {0}", x);
+            };
+           
+            // 使用匿名方法调用委托
+            nc(10);
+
+            // 使用命名方法实例化委托
+            nc =  new NumberChanger(AddNum);
+           
+            // 使用命名方法调用委托
+            nc(5);
+
+            // 使用另一个命名方法实例化委托
+            nc =  new NumberChanger(MultNum);
+           
+            // 使用命名方法调用委托
+            nc(2);
+            Console.ReadKey();
+        }
+    }
+}
+```
+
+**C# 不安全代码**
+
+当一个代码块使用 unsafe 修饰符标记时，C# 允许在函数中使用指针变量。不安全代码或非托管代码是指使用了指针变量的代码块。
+
+**指针变量**
+
+**指针** 是值为另一个变量的地址的变量，即，内存位置的直接地址。就像其他变量或常量，您必须在使用指针存储其他变量地址之前声明指针。
+
+指针变量声明的一般形式为：
+
+```cs
+type* var-name;
+```
+
+实例|	描述
+-|-
+int* p|	p 是指向整数的指针。
+double* p|	p 是指向双精度数的指针。
+float* p|	p 是指向浮点数的指针。
+int** p|	p 是指向整数的指针的指针。
+int*[] p|	p 是指向整数的指针的一维数组。
+char* p|	p 是指向字符的指针。
+void* p|	p 是指向未知类型的指针。
+
+```cs
+using System;
+namespace UnsafeCodeApplication
+{
+    class Program
+    {
+        static unsafe void Main(string[] args)
+        {
+            int var = 20;
+            int* p = &var;
+            Console.WriteLine("Data is: {0} ",  var);
+            Console.WriteLine("Address is: {0}",  (int)p);
+            Console.ReadKey();
+        }
+    }
+}
+```
+
+**使用指针检索数据值**
+
+```cs
+using System;
+namespace UnsafeCodeApplication
+{
+   class Program
+   {
+      public static void Main()
+      {
+         unsafe
+         {
+            int var = 20;
+            int* p = &var;
+            Console.WriteLine("Data is: {0} " , var);
+            Console.WriteLine("Data is: {0} " , p->ToString());
+            Console.WriteLine("Address is: {0} " , (int)p);
+         }
+         Console.ReadKey();
+      }
+   }
+}
+```
+
+**传递指针作为方法的参数**
+
+```cs
+using System;
+namespace UnsafeCodeApplication
+{
+   class TestPointer
+   {
+      public unsafe void swap(int* p, int *q)
+      {
+         int temp = *p;
+         *p = *q;
+         *q = temp;
+      }
+
+      public unsafe static void Main()
+      {
+         TestPointer p = new TestPointer();
+         int var1 = 10;
+         int var2 = 20;
+         int* x = &var1;
+         int* y = &var2;
+         
+         Console.WriteLine("Before Swap: var1:{0}, var2: {1}", var1, var2);
+         p.swap(x, y);
+
+         Console.WriteLine("After Swap: var1:{0}, var2: {1}", var1, var2);
+         Console.ReadKey();
+      }
+   }
+}
+```
+
+**使用指针访问数组元素**
+
+在 C# 中，数组名称和一个指向与数组数据具有相同数据类型的指针是不同的变量类型。例如，int *p 和 int[] p 是不同的类型。可以增加指针变量 p，因为它在内存中不是固定的，但是数组地址在内存中是固定的，所以您不能增加数组 p。
+
+因此，如果您需要使用指针变量访问数组数据，可以像我们通常在 C 或 C++ 中所做的那样，使用 fixed 关键字来固定指针。
+
+下面的实例演示了这点：
+
+```cs
+using System;
+namespace UnsafeCodeApplication
+{
+   class TestPointer
+   {
+      public unsafe static void Main()
+      {
+         int[]  list = {10, 100, 200};
+         fixed(int *ptr = list)
+
+         /* 显示指针中数组地址 */
+         for ( int i = 0; i < 3; i++)
+         {
+            Console.WriteLine("Address of list[{0}]={1}",i,(int)(ptr + i));
+            Console.WriteLine("Value of list[{0}]={1}", i, *(ptr + i));
+         }
+         Console.ReadKey();
+      }
+   }
+}
+```
+
+**编译不安全代码**
+
+为了编译不安全代码，您必须切换到命令行编译器指定 /unsafe 命令行。
+
+例如，为了编译包含不安全代码的名为 prog1.cs 的程序，需在命令行中输入命令：
+
+```cs
+csc /unsafe prog1.cs
+```
+
+**stackalloc**
+
+在unsafe不安全环境中，我们可以通过stackalloc在堆栈上分配内存，因为在堆栈上分配的内存不受内存管理器管理，因此其相应的指针不需要固定。
+
+**C# 多线程**
+
+线程 被定义为程序的执行路径。每个线程都定义了一个独特的控制流。如果您的应用程序涉及到复杂的和耗时的操作，那么设置不同的线程执行路径往往是有益的，每个线程执行特定的工作。
+
+线程是轻量级进程。一个使用线程的常见实例是现代操作系统中并行编程的实现。使用线程节省了 CPU 周期的浪费，同时提高了应用程序的效率。
+
+到目前为止我们编写的程序是一个单线程作为应用程序的运行实例的单一的过程运行的。但是，这样子应用程序同时只能执行一个任务。为了同时执行多个任务，它可以被划分为更小的线程。
+
+**线程生命周期**
+
+线程生命周期开始于 System.Threading.Thread 类的对象被创建时，结束于线程被终止或完成执行时。
+
+下面列出了线程生命周期中的各种状态：
+
+* 未启动状态：当线程实例被创建但 Start 方法未被调用时的状况。
+* 就绪状态：当线程准备好运行并等待 CPU 周期时的状况。
+* 不可运行状态：下面的几种情况下线程是不可运行的：
+1. 已经调用 Sleep 方法
+2. 已经调用 Wait 方法
+3. 通过 I/O 操作阻塞
+* 死亡状态：当线程已完成执行或已中止时的状况。
+
+**主线程**
+
+在 C# 中，System.Threading.Thread 类用于线程的工作。它允许创建并访问多线程应用程序中的单个线程。进程中第一个被执行的线程称为主线程。
+
+当 C# 程序开始执行时，主线程自动创建。使用 Thread 类创建的线程被主线程的子线程调用。您可以使用 Thread 类的 CurrentThread 属性访问线程。
+
+下面的程序演示了主线程的执行：
+
+```cs
+using System;
+using System.Threading;
+
+namespace MultithreadingApplication
+{
+    class MainThreadProgram
+    {
+        static void Main(string[] args)
+        {
+            Thread th = Thread.CurrentThread;
+            th.Name = "MainThread";
+            Console.WriteLine("This is {0}", th.Name);
+            Console.ReadKey();
+        }
+    }
+}
+```
+
+**Thread 类常用的属性和方法**
+
+属性|	描述
+-|-
+CurrentContext|	获取线程正在其中执行的当前上下文。
+CurrentCulture|	获取或设置当前线程的区域性。
+CurrentPrincipal|	获取或设置线程的当前负责人（对基于角色的安全性而言）。
+CurrentThread|	获取当前正在运行的线程。
+CurrentUICulture|	获取或设置资源管理器使用的当前区域性以便在运行时查找区域性特定的资源。
+ExecutionContext|	获取一个 ExecutionContext 对象，该对象包含有关当前线程的各种上下文的信息。
+IsAlive|	获取一个值，该值指示当前线程的执行状态。
+IsBackground|	获取或设置一个值，该值指示某个线程是否为后台线程。
+IsThreadPoolThread|	获取一个值，该值指示线程是否属于托管线程池。
+ManagedThreadId|	获取当前托管线程的唯一标识符。
+Name|	获取或设置线程的名称。
+Priority|	获取或设置一个值，该值指示线程的调度优先级。
+ThreadState|	获取一个值，该值包含当前线程的状态。
+
+下表列出了 Thread 类的一些常用的 方法：
+
+序号|	方法名 & 描述
+-|-
+1|	public void Abort() 在调用此方法的线程上引发 ThreadAbortException，以开始终止此线程的过程。调用此方法通常会终止线程。
+2|	public static LocalDataStoreSlot AllocateDataSlot() 在所有的线程上分配未命名的数据槽。为了获得更好的性能，请改用以 ThreadStaticAttribute 属性标记的字段。
+3|	public static LocalDataStoreSlot AllocateNamedDataSlot( string name) 在所有线程上分配已命名的数据槽。为了获得更好的性能，请改用以 ThreadStaticAttribute 属性标记的字段。
+4|	public static void BeginCriticalRegion() 通知主机执行将要进入一个代码区域，在该代码区域内线程中止或未经处理的异常的影响可能会危害应用程序域中的其他任务。
+5|	public static void BeginThreadAffinity() 通知主机托管代码将要执行依赖于当前物理操作系统线程的标识的指令。
+6|	public static void EndCriticalRegion() 通知主机执行将要进入一个代码区域，在该代码区域内线程中止或未经处理的异常仅影响当前任务。
+7|	public static void EndThreadAffinity() 通知主机托管代码已执行完依赖于当前物理操作系统线程的标识的指令。
+8|	public static void FreeNamedDataSlot(string name) 为进程中的所有线程消除名称与槽之间的关联。为了获得更好的性能，请改用以 ThreadStaticAttribute 属性标记的字段。
+9|	public static Object GetData( LocalDataStoreSlot slot ) 在当前线程的当前域中从当前线程上指定的槽中检索值。为了获得更好的性能，请改用以 ThreadStaticAttribute 属性标记的字段。
+10|	public static AppDomain GetDomain() 返回当前线程正在其中运行的当前域。
+11|	public static AppDomain GetDomainID() 返回唯一的应用程序域标识符。
+12|	public static LocalDataStoreSlot GetNamedDataSlot( string name ) 查找已命名的数据槽。为了获得更好的性能，请改用以 ThreadStaticAttribute 属性标记的字段。
+13|	public void Interrupt() 中断处于 WaitSleepJoin 线程状态的线程。
+14|	public void Join() 在继续执行标准的 COM 和 SendMessage 消息泵处理期间，阻塞调用线程，直到某个线程终止为止。此方法有不同的重载形式。
+15|	public static void MemoryBarrier() 按如下方式同步内存存取：执行当前线程的处理器在对指令重新排序时，不能采用先执行 MemoryBarrier 调用之后的内存存取，再执行 MemoryBarrier 调用之前的内存存取的方式。
+16|	public static void ResetAbort() 取消为当前线程请求的 Abort。
+17|	public static void SetData( LocalDataStoreSlot slot, Object data ) 在当前正在运行的线程上为此线程的当前域在指定槽中设置数据。为了获得更好的性能，请改用以 ThreadStaticAttribute 属性标记的字段。
+18|	public void Start() 开始一个线程。
+19|	public static void Sleep( int millisecondsTimeout ) 让线程暂停一段时间。
+20|	public static void SpinWait( int iterations ) 导致线程等待由 iterations 参数定义的时间量。
+21|	public static byte VolatileRead( ref byte address ) public static double VolatileRead( ref double address ) public static int VolatileRead( ref int address ) public static Object VolatileRead( ref Object address ) 读取字段值。无论处理器的数目或处理器缓存的状态如何，该值都是由计算机的任何处理器写入的最新值。此方法有不同的重载形式。这里只给出了一些形式。
+22|	public static void VolatileWrite( ref byte address, byte value ) public static void VolatileWrite( ref double address, double value ) public static void VolatileWrite( ref int address, int value ) public static void VolatileWrite( ref Object address, Object value ) 立即向字段写入一个值，以使该值对计算机中的所有处理器都可见。此方法有不同的重载形式。这里只给出了一些形式。
+23|	public static bool Yield() 导致调用线程执行准备好在当前处理器上运行的另一个线程。由操作系统选择要执行的线程。
+
 
